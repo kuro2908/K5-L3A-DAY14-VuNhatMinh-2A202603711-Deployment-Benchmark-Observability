@@ -134,6 +134,7 @@ async def run_agent(question: str) -> mock_llm.LLMResult:
     with tracer.start_as_current_span("agent.run") as span:
         span.set_attribute("agent.version", settings.agent_version)
         span.set_attribute("agent.question.length", len(question))
+        m.QUESTION_LENGTH.observe(len(question))
 
         context = None
         if settings.agent_version == "v2":
