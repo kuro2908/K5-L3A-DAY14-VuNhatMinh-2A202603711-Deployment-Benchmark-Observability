@@ -1,0 +1,5 @@
+BASE=https://k5-l3a-day14-vunhatminh-2a202603711.onrender.com
+GET  /health                   -> 200
+GET  /ready                    -> 200
+POST /ask (không có API key)   -> 401
+POST /ask (có X-API-Key đúng)  -> 200
